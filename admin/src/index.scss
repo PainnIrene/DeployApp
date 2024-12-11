@@ -1,0 +1,32 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f6f8;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #eeeeee;
+  --sidebar-bg: #1a1c23;
+  --accent-color: #8c52ff;
+}
+
+body.dark-mode {
+  --bg-primary: #1a1c23;
+  --bg-secondary: #242731;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --border-color: #2d3748;
+  --sidebar-bg: #242731;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Update other component styles to use CSS variables

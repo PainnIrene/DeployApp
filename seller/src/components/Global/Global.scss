@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.swal2-popup {
+  font-family: "Your-Font-Family", sans-serif;
+
+  .swal2-title {
+    color: #333;
+    font-size: 1.5em;
+  }
+
+  .swal2-html-container {
+    color: #666;
+  }
+
+  .swal2-confirm {
+    background-color: #8c52ff !important;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(140, 82, 255, 0.3);
+    }
+  }
+
+  .swal2-cancel {
+    background-color: #dc3545 !important;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
+    }
+  }
+}

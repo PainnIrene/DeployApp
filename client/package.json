@@ -1,0 +1,62 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.7.0",
+    "@stripe/stripe-js": "^5.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.22.4",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.7",
+    "classnames": "^2.5.1",
+    "dotenv": "^16.4.5",
+    "idb": "^8.0.0",
+    "js-cookie": "^3.0.5",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-countdown": "^2.3.5",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-phone-input-2": "^2.15.1",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.11.1",
+    "vn-local-plus": "^1.1.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "sass": "^1.70.0"
+  }
+}

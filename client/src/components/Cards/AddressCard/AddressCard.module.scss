@@ -1,0 +1,119 @@
+.card-button {
+  background-color: transparent;
+  border: none;
+  text-align: start;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid green;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+.wrapper {
+  display: flex;
+  // border: 1px solid green;
+  padding: 10px;
+  height: 115px;
+  // background-color: hsl(220 15% 91%);
+  // border-radius: 20px;
+  position: relative;
+  // transition: transform 0.3s ease, box-shadow 0.3s ease;
+  // cursor: pointer;
+  // &:hover {
+  //   transform: scale(1.05);
+  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  // }
+}
+
+.address-label {
+  position: absolute;
+  top: -7px; /* Đặt chữ lên trên viền */
+  left: 50px; /* Đưa chữ vào giữa */
+  background-color: white;
+  z-index: 4;
+  padding: 0 5px;
+  color: green;
+}
+
+.icon-container {
+  height: 50px;
+  width: 50px;
+  margin: auto 20px;
+  img {
+    width: inherit;
+    height: inherit;
+    filter: invert(23%) sepia(71%) saturate(6639%) hue-rotate(118deg)
+      brightness(95%) contrast(106%);
+  }
+}
+.address-container {
+  height: fit-content;
+  margin: auto 0;
+}
+.button-group-container {
+  position: absolute;
+  // right: 10px;
+  // top: 10px;
+  width: calc(100% - 10px);
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.mark-default-button {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: auto;
+  // img {
+  //   height: 20px;
+  //   width: 20px;
+  //   transition: all 0.3s ease;
+  //   &:hover path {
+  //     stroke: gold;
+  //     fill: gold;
+  //   }
+  // }
+}
+.star-icon {
+  height: 20px;
+  width: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover path {
+    stroke: gold;
+    fill: gold;
+  }
+}
+.star-icon-default {
+  height: 20px;
+  width: 20px;
+  stroke: gold;
+  fill: gold;
+}
+.delete-button {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  img {
+    height: 20px;
+    width: 20px;
+    &:hover {
+      filter: invert(11%) sepia(88%) saturate(7049%) hue-rotate(9deg)
+        brightness(135%) contrast(126%);
+      fill: black;
+    }
+  }
+}
+.user-info {
+  display: flex;
+  span {
+    margin: 0 10px;
+  }
+}

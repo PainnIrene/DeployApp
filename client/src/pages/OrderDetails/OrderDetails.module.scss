@@ -1,0 +1,278 @@
+.order-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.order-header {
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .order-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order-id {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .order-status {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  .info-item {
+    span {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    &.full-width {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.order-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .item-details {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .item-image {
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
+}
+
+.payment-details {
+  .payment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    span {
+      color: #666;
+    }
+
+    p {
+      font-weight: 500;
+    }
+
+    &.total {
+      font-size: 18px;
+      font-weight: 600;
+      color: #8c52ff;
+      margin-top: 8px;
+    }
+  }
+
+  .payment-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &.pending {
+      background: #fff3e0;
+      color: #ff9800;
+    }
+
+    &.paid {
+      background: #e8f5e9;
+      color: #4caf50;
+    }
+
+    &.failed {
+      background: #ffebee;
+      color: #f44336;
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 24px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background-color: #e0e0e0;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+
+  &.active {
+    .timeline-point {
+      background-color: #4caf50;
+    }
+  }
+}
+
+.timeline-point {
+  position: absolute;
+  left: -29px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 2px solid white;
+}
+
+.timeline-content {
+  h4 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  width: 100%;
+  min-height: 40px;
+
+  &.cancel {
+    background-color: #ff4d4f;
+    color: white;
+    &:hover {
+      background-color: #ff7875;
+    }
+  }
+
+  &.complete {
+    background-color: #52c41a;
+    color: white;
+    &:hover {
+      background-color: #73d13d;
+    }
+  }
+
+  &.rate {
+    background-color: #1890ff;
+    color: white;
+    &:hover {
+      background-color: #40a9ff;
+    }
+  }
+}
+
+.rate-button {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-top: 8px;
+
+  &:hover {
+    background-color: #40a9ff;
+  }
+}

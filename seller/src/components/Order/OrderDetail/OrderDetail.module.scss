@@ -1,0 +1,230 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #8c52ff;
+
+  h2 {
+    color: #8c52ff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.shipping-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover {
+    background-color: #7440e0;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    filter: invert(36%) sepia(95%) saturate(3337%) hue-rotate(243deg)
+      brightness(101%) contrast(101%);
+  }
+
+  &:hover img {
+    filter: invert(13%) sepia(76%) saturate(7491%) hue-rotate(323deg)
+      brightness(99%) contrast(106%);
+  }
+}
+
+.detail-section {
+  background: #f8f9fa;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+
+  h3 {
+    color: #8c52ff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: #666;
+  font-size: 14px;
+}
+
+.value {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+  }
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-variant {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  color: #8c52ff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.total {
+  text-align: right;
+  background: white;
+
+  .amount-info {
+    margin-bottom: 20px;
+  }
+
+  .total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8c52ff;
+    margin-top: 10px;
+  }
+
+  .shipping-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+// Status styles
+.status-pending {
+  color: #ffa500;
+  font-weight: 600;
+}
+
+.status-shipping {
+  color: #8c52ff;
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-cancelled {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+// Payment status styles
+.payment-status-pending {
+  color: #ffa500;
+  font-weight: 600;
+}
+
+.payment-status-paid {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.payment-status-failed {
+  color: #dc3545;
+  font-weight: 600;
+}

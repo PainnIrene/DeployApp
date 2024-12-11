@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package productService;
+
+service ProductService {
+  rpc GetInstockOfProduct (GetInstockOfProductRequest) returns (GetInstockOfProductRequestResponse) {} 
+  rpc GetPartOfProductInfo (GetPartOfProductInfoRequest) returns (GetPartOfProductInfoResponse){}
+rpc GetDetailsProductInfo (GetDetailsProductInfoRequest) returns (GetDetailsProductInfoResponse){}
+rpc CheckProductInventory (CheckInventoryRequest) returns (CheckInventoryResponse) {}
+rpc UpdateProductInventory (UpdateProductInventoryRequest) returns (UpdateProductInventoryResponse) {}
+}
+
+message GetInstockOfProductRequest {
+  string productId = 1;
+  string value1 = 2; 
+  string value2 = 3; 
+}
+
+message GetInstockOfProductRequestResponse {
+  int32 inStock =1;
+  string _id = 2;
+  string sellerId=3;
+}
+message GetPartOfProductInfoRequest{
+string optionId = 1;
+}
+message GetPartOfProductInfoResponse{
+  string productName =1;
+  float price =2;
+  string promotionImage =3;
+  string value1 =4;
+  string value2 =5;
+  string error=6;
+}
+message GetDetailsProductInfoRequest{
+string optionId = 1;
+}
+message GetDetailsProductInfoResponse {
+  string productName =1;
+  float price =2;
+  string promotionImage =3;
+  string type1=4;
+  string type2=5;
+  string value1 =6;
+  string value2 =7;
+  string error=8;
+  int32 inStock =9;
+}
+message CheckInventoryRequest {
+  message OrderItem {
+    string productId = 1;
+    string optionId = 2;
+    int32 quantity = 3;
+  }
+  repeated OrderItem items = 1;
+}
+
+message CheckInventoryResponse {
+  bool success = 1;
+  repeated OutOfStockItem outOfStockItems = 2;
+}
+
+message OutOfStockItem {
+  string productId = 1;
+  string optionId = 2;
+  int32 availableQuantity = 3;
+}
+message UpdateProductInventoryRequest {
+  string productId = 1;
+  string optionId = 2;
+  int32 quantity = 3;
+}
+message UpdateProductInventoryResponse {
+  bool success = 1;
+}

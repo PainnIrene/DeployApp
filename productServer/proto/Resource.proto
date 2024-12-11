@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package resourceService;
+
+service ResourceService {
+  rpc UploadSingleFile(UploadSingleFileRequest) returns (UploadSingleFileResponse) {}
+  rpc DeleteSingleFile(DeleteSingleFileRequest) returns (DeleteSingleFileResponse){}
+  rpc UploadProductImages(UploadProductImagesRequest) returns (UploadProductImagesResponse){}
+}
+
+message UploadSingleFileRequest {
+  string userId = 1;
+  string bucketName = 2;
+  string bucketFolder = 3;
+  bytes image = 4;
+  string fileExtension=5;
+}
+
+message UploadSingleFileResponse {
+  string url = 1;
+  bool success = 2;
+}
+
+message DeleteSingleFileRequest {
+  string url = 1;
+  string bucketName = 2;
+}
+
+message DeleteSingleFileResponse {
+  bool success = 1;
+}
+
+message UploadProductImagesRequest {
+  string userId = 1;
+  string productId = 2;
+  string bucketName = 3;
+  string bucketFolder = 4;
+  FileData promotionImage = 5; // Single thumbnail image
+  repeated FileData productImages = 6; // Array of product images
+  repeated FileData optionImages = 7; // Array of detail images
+}
+
+message UploadProductImagesResponse {
+  FileUploadResult promotionImageUrl = 1; // Single URL for promotion image
+  repeated FileUploadResult productImageUrls = 2;
+  repeated FileUploadResult optionImageUrls = 3;
+}
+
+message FileData {
+  bytes buffer = 1;
+  string originalname = 2;
+  string mimetype = 3;
+  int64 size = 4;
+}
+
+message FileUploadResult {
+  string url = 1;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cartService;
+
+service CartService {
+  rpc UpdateCartAfterOrder (UpdateCartRequest) returns (UpdateCartResponse) {}
+}
+
+message UpdateCartRequest {
+  string userId = 1;
+  repeated CartItem items = 2;
+}
+
+message CartItem {
+  string optionId = 1;
+  int32 quantity = 2;
+}
+
+message UpdateCartResponse {
+  bool success = 1;
+  string message = 2;
+}

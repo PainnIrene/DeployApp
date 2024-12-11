@@ -1,0 +1,138 @@
+.header-container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  height: 54px;
+}
+.header-title {
+  background-color: red;
+  color: white;
+}
+.logo-brand {
+  margin-left: 5%;
+  width: 20%;
+}
+.profile-container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-container > button {
+  height: 50%;
+  width: 40%;
+  align-items: center;
+  align-content: center;
+  margin: 1%;
+  border: none;
+  background-color: #8c52ff;
+  border-radius: 40px;
+  color: white;
+}
+.profile-container > button:hover {
+  background-color: #6520ef;
+  cursor: pointer;
+}
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid green;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  &:hover ~ .profile-dropdown {
+    display: block;
+  }
+}
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-dropdown {
+  width: 300px;
+  top: 50px;
+  color: white;
+  background-color: red;
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.profile-dropdown > a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+  background-color: #1f1f1f;
+}
+.profile-dropdown:hover {
+  display: block;
+}
+.profile-dropdown > a:hover {
+  background-color: #8c52ff;
+  transform: scale(1.1);
+  padding-left: 20px;
+}
+.profile-dropdown > a > h1 {
+  font-size: 16px;
+  font-weight: 100;
+  display: inline-block;
+  line-height: 1.2;
+  margin-left: 10px;
+}
+.profile-dropdown > a > img {
+  filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(135deg)
+    brightness(105%) contrast(101%);
+}
+
+.black-background {
+  background-color: #8c52ff;
+  width: inherit;
+  height: 70px;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.avatar-container {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #1f1f1f;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.profile-details {
+  background-color: #1f1f1f;
+  padding-top: 30px;
+}
+.profile-details > h1 {
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+}
+.profile-details > h3 {
+  font-size: 12px;
+  font-weight: lighter;
+  text-align: center;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,281 @@
+.credit-card-form,
+.credit-card-form *,
+.credit-card-form *::before,
+.credit-card-form *::after {
+  box-sizing: border-box;
+}
+
+.credit-card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // border: 1px solid #8c52ff;
+  position: relative;
+  margin-top: 150px;
+  width: 550px;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.card {
+  width: 430px;
+  height: 270px;
+  position: absolute;
+  // perspective: 1000px;
+  top: -135px;
+  z-index: 1;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.focusIn::before {
+  border-color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+  top: var(--top, 0);
+  left: var(--left, 0);
+  width: var(--width, 100%);
+  height: var(--height, 100%);
+}
+
+.focusOut::before {
+  border-color: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-label {
+  font-size: 18px;
+  padding: 10px;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.inputs {
+  margin-top: 150px;
+  width: 100%;
+  input {
+    width: 100%;
+  }
+}
+
+.card-input {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1 1 200px;
+}
+
+.card-front-content,
+.card-back-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white;
+}
+.card-front-content {
+  padding: 25px 15px;
+}
+
+.card-front-background,
+.card-back-background {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.card-back-background {
+  transform: rotateY(180deg);
+}
+.content-front-top {
+  display: flex;
+  width: 100%;
+  height: 49px;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 0 0 40px;
+  img {
+    max-height: inherit;
+    min-height: fit-content;
+    max-width: 140px;
+  }
+}
+.content-front-middle {
+  z-index: 3;
+  height: 47px;
+  label {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    line-height: 30px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 20px;
+  }
+}
+.content-front-bottom {
+  display: flex;
+  margin-top: 42px;
+}
+.front-bottom-left {
+  width: 317px;
+  label {
+    width: 100%;
+    display: block;
+  }
+}
+.front-bottom-right {
+  width: 80px;
+  label {
+    width: 100%;
+    display: block;
+  }
+}
+
+.content-title {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  margin: 0 0 6px;
+}
+.card-magnetic-stripe {
+  width: 100%;
+  background-color: rgba(0, 0, 19, 0.9);
+  height: 50px;
+  margin-top: 30px;
+}
+.card-cvv-label-container {
+  padding: 15px;
+  h4 {
+    text-align: right;
+    line-height: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 0 10px 0 0;
+  }
+}
+.cvv-band {
+  width: 100%;
+  background-color: #fff;
+  height: 45px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+
+  label {
+    width: fit-content;
+    height: inherit;
+    color: black;
+  }
+}
+.credit-card-inputs-bottom {
+  display: flex;
+  width: 100%;
+}
+.credit-card-inputs-bottom-left {
+  width: 70%;
+  .credit-card-month-select {
+    margin-right: 2%;
+  }
+  select {
+    width: 45%;
+    height: 43px;
+    font-size: 18px;
+    color: #1a3b5d;
+  }
+}
+.credit-card-inputs-bottom-right {
+  width: 30%;
+  .cvv-input {
+    width: 100%;
+  }
+}
+.credit-card-input-label {
+  color: #1a3b5d;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #1a3b5d;
+  width: 100%;
+  display: block;
+  user-select: none;
+  margin-top: 10px;
+}
+.button-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  button {
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .cancel-button {
+    background-color: red;
+    &:active {
+      background-color: rgb(252, 65, 65);
+    }
+  }
+  .submit-button {
+    background-color: green;
+    &:active {
+      background-color: rgb(6, 148, 6);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.main-contents {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #8c52ff;
+  border-radius: 10px;
+  //   width: 100%;
+  //   height: 100%;
+}

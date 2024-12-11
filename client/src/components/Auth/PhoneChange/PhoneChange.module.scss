@@ -1,0 +1,190 @@
+.phone-change-container {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  width: 600px;
+  height: fit-content;
+  // overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 20px;
+}
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.912);
+  z-index: 999;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #8c52ff;
+  border-radius: 20px 20px 0 0;
+  > h1 {
+    color: white;
+  }
+}
+.exitButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  background-color: rgb(231, 61, 61);
+  color: white;
+  &:hover {
+    background-color: red;
+  }
+  &:active {
+    background-color: black;
+  }
+}
+.body {
+  padding: 20px;
+
+  .change-phone-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    > .react-tel-input {
+      margin: 0 auto;
+    }
+    > input {
+      padding: 0 10px;
+      height: 30px;
+      text-align: center;
+      width: 100%;
+    }
+    > label {
+      margin-left: 26px;
+    }
+  }
+}
+
+.phone-icon-container {
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+  img {
+    width: inherit;
+  }
+}
+.new-phone-input-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  // input {
+  //   border-radius: 0;
+  //   border: 1px solid green;
+  //   width: auto;
+  //   &:focus {
+  //     outline: none;
+  //   }
+  // }
+  button {
+    cursor: pointer;
+    background-color: #8c52ff;
+    border: none;
+    outline: #cacaca solid 1px;
+    color: white;
+    height: 48px;
+    border-radius: 0 6px 6px 0;
+    width: 100px;
+  }
+  > div {
+    margin: 0 !important;
+    border-radius: 6px 0 0 6px;
+  }
+}
+.timer-limit-hide {
+  display: none;
+}
+.phone-sent-container {
+  .phone-notification-check {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgb(76, 75, 75);
+    }
+  }
+}
+.timer-limit {
+  display: flex;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  justify-content: center;
+  margin-top: 10px;
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  div {
+    display: flex;
+    margin-left: 10px;
+  }
+  div > span {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: blue;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    text-decoration-line: underline;
+    margin: 0 10px;
+    font-size: 15px;
+    font-weight: 500;
+    &:active {
+      color: rgb(252, 89, 89);
+    }
+  }
+}
+
+.submit-button {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10px;
+  button {
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #8c52ff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #7237e8;
+    }
+    &:active {
+      background-color: #9b70f3;
+    }
+  }
+}

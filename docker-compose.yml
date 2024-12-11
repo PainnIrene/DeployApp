@@ -1,0 +1,142 @@
+version: "3.8"
+
+networks:
+  microservices:
+    driver: bridge
+
+services:
+  # Databases
+  mongodb_User:
+    image: bitnami/mongodb
+    container_name: mongodb_User
+    ports:
+      - "27027:27017"
+    volumes:
+      - ~/.docker-conf/mongodb/data/:/var/lib/mongodb_user/
+      - ~/.docker-conf/mongodb/log/:/var/log/mongodb_user
+    networks:
+      - microservices
+    restart: always
+
+  mongodb_Product:
+    image: bitnami/mongodb
+    container_name: mongodb_Product
+    ports:
+      - "27028:27017"
+    volumes:
+      - ~/.docker-conf/mongodb/data/:/var/lib/mongodb_product/
+      - ~/.docker-conf/mongodb/log/:/var/log/mongodb_product
+    networks:
+      - microservices
+    restart: always
+
+  mongodb_Order:
+    image: bitnami/mongodb
+    container_name: mongodb_Order
+    ports:
+      - "27029:27017"
+    volumes:
+      - ~/.docker-conf/mongodb/data/:/var/lib/mongodb_order/
+      - ~/.docker-conf/mongodb/log/:/var/log/mongodb_order
+    networks:
+      - microservices
+    restart: always
+
+  redis:
+    image: redis/redis-stack-server
+    container_name: redis-stack-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - ~/.docker-conf/redis/data/:/var/lib/redis/
+      - ~/.docker-conf/redis/log/:/var/log/redis
+    networks:
+      - microservices
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: "rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - microservices
+    restart: always
+
+  # Backend Services
+  user-service:
+    build: ./userServer
+    environment:
+      - MONGODB_URL=mongodb://mongodb_User:27017/users
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_PORT=5672
+    networks:
+      - microservices
+    depends_on:
+      - mongodb_User
+      - redis
+      - rabbitmq
+
+  product-service:
+    build: ./productServer
+    environment:
+      - MONGODB_URL=mongodb://mongodb_Product:27017/products
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_PORT=5672
+    networks:
+      - microservices
+    depends_on:
+      - mongodb_Product
+      - redis
+      - rabbitmq
+
+  order-service:
+    build: ./orderServer
+    environment:
+      - MONGODB_URL=mongodb://mongodb_Order:27017/orders
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_PORT=5672
+    networks:
+      - microservices
+    depends_on:
+      - mongodb_Order
+      - redis
+      - rabbitmq
+
+  mail-service:
+    build: ./mailServer
+    environment:
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_PORT=5672
+    networks:
+      - microservices
+    depends_on:
+      - rabbitmq
+
+  sms-service:
+    build: ./smsServer
+    environment:
+      - RABBITMQ_HOSTNAME=rabbitmq
+      - RABBITMQ_PORT=5672
+    networks:
+      - microservices
+    depends_on:
+      - rabbitmq
+
+  detect-service:
+    build: ./detectService
+    networks:
+      - microservices
+
+  resource-service:
+    build: ./resourceServer
+    networks:
+      - microservices
+    volumes:
+      - ./uploads:/app/uploads

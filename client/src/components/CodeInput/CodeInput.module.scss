@@ -1,0 +1,27 @@
+.code-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.code-input {
+  width: 10px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #8c52ff;
+    outline: none;
+    caret-color: #8c52ff;
+  }
+
+  &::placeholder {
+    color: #ddd;
+  }
+}

@@ -1,0 +1,372 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 64px);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.section {
+  background: white;
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(140, 82, 255, 0.1);
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.change-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid rgba(140, 82, 255, 0.2);
+  border-radius: 12px;
+
+  &:hover {
+    border-color: #8c52ff;
+  }
+}
+
+.icon-container {
+  margin-right: 1rem;
+  > img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  > h4 {
+    font-weight: 500;
+  }
+}
+
+.address-info {
+  > h4 {
+    color: #666;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-details {
+  .item-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
+.variant-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background: rgba(140, 82, 255, 0.1);
+  color: #8c52ff;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #7440e0;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.address-option {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+
+  &.selected {
+    border-color: #1a94ff;
+    background: #f0f7ff;
+  }
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  padding: 20px 0;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  width: 120px;
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #999;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .step-text {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    .step-circle {
+      background-color: #8c52ff;
+      border-color: #8c52ff;
+      color: white;
+    }
+    .step-text {
+      color: #8c52ff;
+      font-weight: 500;
+    }
+  }
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background-color: #ddd;
+  position: relative;
+  z-index: 1;
+  margin: 0 -20px;
+  margin-top: -36px;
+
+  .progress-line-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #8c52ff;
+    transition: width 0.3s ease;
+  }
+}
+
+.step-2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkout-content {
+  display: flex;
+  gap: 30px;
+
+  .main-content {
+    flex: 1;
+  }
+
+  .order-summary {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+  }
+}
+
+.order-summary {
+  .summary-section {
+    position: sticky;
+    top: 24px;
+    background: white;
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(140, 82, 255, 0.1);
+  }
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  font-weight: 600;
+  font-size: 18px;
+  color: #8c52ff;
+}
+
+.checkout-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+// Progress Bar styles
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.step-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.3s ease;
+
+  &.active {
+    background-color: #8c52ff;
+    border-color: #8c52ff;
+    color: white;
+  }
+
+  &.completed {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: white;
+  }
+}
+
+.step-title {
+  margin: 0 15px;
+  color: #666;
+  font-weight: 500;
+}
+
+.connector {
+  width: 100px;
+  height: 2px;
+  background-color: #ddd;
+  margin: 0 10px;
+
+  &.active {
+    background-color: #8c52ff;
+  }
+}

@@ -1,0 +1,47 @@
+:root {
+  --star-size: 60px;
+  --star-color: #fff;
+  --star-background: #8c52ff;
+  --star-border: 1px solid #8c52ff;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  --size: 60px;
+
+  display: inline-block;
+  font-size: var(--size);
+  font-family: Times;
+  line-height: 1;
+  max-width: 100%;
+  position: relative;
+
+  &::before {
+    content: "★★★★★";
+    letter-spacing: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--star-background) var(--percent),
+      var(--star-color) var(--percent)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "★★★★★";
+    letter-spacing: 2px;
+    color: var(--star-background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 calc(100% - var(--percent)) 0 0);
+  }
+
+  &::before,
+  &::after {
+    -webkit-text-stroke: 1px #8c52ff; /* Gold border */
+  }
+}

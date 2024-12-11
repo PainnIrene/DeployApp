@@ -1,0 +1,58 @@
+.container-mask {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  border: 1px solid black;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  width: 500px;
+  max-height: 500px;
+  background-color: white;
+}
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #8c52ff;
+  h1 {
+    color: white;
+  }
+}
+.exitButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(231, 61, 61);
+  color: white;
+  &:hover {
+    background-color: red;
+  }
+  &:active {
+    background-color: black;
+  }
+}
+.video-container {
+  width: 500px;
+  max-height: 500px;
+  display: flex;
+  height: fit-content;
+  video {
+    width: inherit;
+    object-fit: contain;
+    max-height: 500px;
+    background-color: white;
+  }
+}

@@ -1,0 +1,237 @@
+input {
+  padding: 0 20px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.912);
+  z-index: 999;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+}
+.form {
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 40px 0 0;
+  padding: 20px 10px 28px;
+  width: 400px;
+  max-width: 400px;
+  text-align: center;
+}
+.form > p {
+  font-size: 14px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  margin-left: 30px;
+}
+.form > Button {
+  cursor: pointer;
+}
+.input,
+.button {
+  color: hsl(220 17% 14%);
+  border: 1px solid #dddfe2;
+  display: inline-block;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 16px;
+  padding: 14px 16px;
+  width: 90%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+.input:focus {
+  outline: none;
+  border-color: #8c52ff;
+  box-shadow: 0 0 0 2px #e7f3ff;
+  caret-color: #8c52ff;
+}
+.input:focus::placeholder {
+  opacity: 0.5;
+}
+.checkBox {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  color: #8c52ff;
+}
+.checkBox > input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #8c52ff;
+}
+.checkBox > h4 {
+  font-size: 14px;
+}
+.passwordContains {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 30px;
+  color: #8c52ff;
+}
+
+.button {
+  width: 90%; /* Ensure button fills the entire width */
+  background-color: #8c52ff;
+
+  color: #fff;
+  border: none;
+  &:hover {
+    background-color: #7c49e1;
+  }
+  &:active {
+    background-color: #5319c7;
+  }
+}
+
+.valid {
+  color: green;
+  &::before {
+    content: "\2714";
+    color: green;
+    margin-right: 5px;
+  }
+}
+
+.notValid {
+  color: red;
+  &::before {
+    content: "\2718";
+    color: red;
+    margin-right: 5px;
+  }
+}
+.background-container {
+  width: 100%;
+  height: 295px;
+}
+.form-oauth {
+  padding: 0;
+  overflow: hidden;
+}
+.form-oauth > h3 {
+  color: #7c49e1;
+}
+.background-image {
+  width: inherit;
+  height: inherit;
+}
+.hr-with-text {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #7c49e1;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #7c49e1;
+  }
+  &:before {
+    margin-right: 10px;
+  }
+  &:after {
+    margin-left: 10px;
+  }
+}
+
+.google-button {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  background-color: #1a73e8;
+  border: 1px solid grey;
+  padding: 4px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px auto;
+  cursor: pointer;
+  &:hover {
+    box-shadow: #1a73e8 0px 3px 8px;
+  }
+  &:active {
+    background-color: #054caa;
+  }
+}
+.facebook-button {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  background-color: #3d5a9a;
+  border: 1px solid grey;
+  padding: 4px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px auto;
+  cursor: pointer;
+  &:hover {
+    box-shadow: #3d5a9a 0px 3px 8px;
+  }
+  &:active {
+    background-color: #152e63;
+  }
+}
+.google-button > img {
+  height: 38px;
+  background-color: white;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.facebook-button > img {
+  height: 38px;
+  width: 38px;
+  background-color: white;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.login-redirect-button {
+  text-decoration: none;
+  background-color: #1a1818;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    box-shadow: #8c52ff 0px 3px 8px;
+  }
+  &:active {
+    background-color: #4e1ab7;
+  }
+}
+.login-redirect-button > img {
+  vertical-align: middle;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(238deg)
+    brightness(105%) contrast(106%);
+}

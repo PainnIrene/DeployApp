@@ -1,0 +1,111 @@
+.side-bar {
+  width: 15%;
+  background-color: #8c52ff;
+  padding: 20px 0px;
+  color: white;
+}
+.user-profile-sub-container {
+  display: flex;
+  padding-bottom: 20px;
+  margin: 0 15px;
+  border-bottom: 1px solid white;
+}
+.sub-avt {
+  width: 50px !important;
+  height: 50px !important;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid green;
+}
+.sub-content {
+  width: calc(100% - 80px);
+  font-size: 10px;
+  display: flex;
+  height: fit-content;
+  margin: auto 0;
+}
+.sub-content > h1 {
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub-content > img {
+  width: 20px;
+  filter: invert(99%) sepia(0%) saturate(662%) hue-rotate(347deg)
+    brightness(118%) contrast(100%);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.link-items {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-heading-profile {
+  margin: 10px 0;
+  margin-left: 20px;
+}
+.sidebar-heading-profile > h1 {
+  font-size: 24px;
+}
+.sidebar-heading-profile > span {
+  font-size: 14px;
+}
+.link {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  margin-left: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: white;
+}
+
+.link > img {
+  width: 30px;
+  margin-right: 10px;
+  filter: invert(99%) sepia(0%) saturate(662%) hue-rotate(347deg)
+    brightness(118%) contrast(100%);
+}
+.activated {
+  background-color: white;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 white;
+  }
+  img {
+    filter: invert(0%) sepia(87%) saturate(7456%) hue-rotate(191deg)
+      brightness(107%) contrast(101%);
+  }
+  span {
+    color: black;
+    font-weight: bold;
+  }
+}

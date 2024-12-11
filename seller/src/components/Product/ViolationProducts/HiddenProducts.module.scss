@@ -1,0 +1,158 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  td {
+    border: 1px solid #8c52ff;
+    padding: 0;
+  }
+  thead {
+    background-color: #8c52ff;
+  }
+}
+
+td > button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  img {
+    margin-left: 10px;
+    height: 20px;
+    filter: invert(100%) sepia(97%) saturate(3%) hue-rotate(50deg)
+      brightness(103%) contrast(100%);
+  }
+}
+.table-head {
+  font-size: 20px;
+  height: 22px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: white;
+}
+
+.promotion-container-1-1 {
+  height: 75px;
+  width: 75px;
+  margin: 0 auto;
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+.promotion-container-3-4 {
+  height: 100px;
+  width: 75px;
+  margin: 0 auto;
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.div-row {
+  padding: 10px;
+}
+.div-row + .div-row {
+  border-top: 0.5px solid #8c52ff;
+}
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  button {
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    img {
+      margin-right: 5px;
+      margin-left: 20%;
+      filter: invert(34%) sepia(100%) saturate(2335%) hue-rotate(241deg)
+        brightness(99%) contrast(103%);
+    }
+    span {
+      color: #8c52ff;
+    }
+    &:hover {
+      span {
+        color: #ff0080;
+      }
+      img {
+        filter: invert(13%) sepia(76%) saturate(7491%) hue-rotate(323deg)
+          brightness(99%) contrast(106%);
+      }
+    }
+  }
+}
+.status-published {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: #8c52ff;
+  }
+  img {
+    margin-right: 5px;
+    filter: invert(36%) sepia(95%) saturate(3337%) hue-rotate(243deg)
+      brightness(101%) contrast(101%);
+  }
+}
+.status-violation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: red;
+  }
+  img {
+    margin-right: 5px;
+    filter: invert(23%) sepia(56%) saturate(7224%) hue-rotate(353deg)
+      brightness(104%) contrast(129%);
+  }
+}
+
+.status-hidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: #808080;
+  }
+  img {
+    margin-right: 5px;
+    filter: invert(56%) sepia(7%) saturate(19%) hue-rotate(9deg) brightness(89%)
+      contrast(94%);
+  }
+}
+.status-unpublished {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: green;
+  }
+  img {
+    margin-right: 5px;
+    filter: invert(23%) sepia(93%) saturate(2742%) hue-rotate(93deg)
+      brightness(93%) contrast(104%);
+  }
+}
+.page-size-container {
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+  label {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 10px;
+  }
+  select {
+    height: 24px;
+  }
+}

@@ -1,0 +1,129 @@
+.header {
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left {
+  .search {
+    display: flex;
+    align-items: center;
+    background: #f4f6f8;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 300px;
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 100%;
+      color: #333;
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    .search-btn {
+      background: transparent;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #8c52ff;
+      }
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.notifications {
+  position: relative;
+
+  .icon-btn {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+
+    &:hover {
+      background: #f4f6f8;
+      color: #8c52ff;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4757;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f4f6f8;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .info {
+    .name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .logout {
+      background: transparent;
+      border: none;
+      color: #666;
+      font-size: 12px;
+      padding: 0;
+      cursor: pointer;
+
+      &:hover {
+        color: #8c52ff;
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.container-mask {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  border: 1px solid black;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  height: fit-content;
+  max-height: 80%;
+  width: 60%;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #8c52ff;
+
+  h1 {
+    color: white;
+  }
+}
+
+.exitButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(231, 61, 61);
+  color: white;
+
+  &:hover {
+    background-color: red;
+  }
+
+  &:active {
+    background-color: black;
+  }
+}
+
+.main-contents {
+  overflow: auto;
+  height: calc(100% - 60px);
+  padding: 20px;
+}
+
+.table-restock {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  thead {
+    color: white;
+  }
+  th,
+  td {
+    border: 1px solid grey;
+    // padding: 10px 0;
+    text-align: center;
+  }
+  th {
+    padding: 10px;
+  }
+  input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+}
+
+.promotion-container-1-1 {
+  height: 75px;
+  width: 75px;
+  margin: 0 auto;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.promotion-container-3-4 {
+  height: 100px;
+  width: 75px;
+  margin: 0 auto;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.updateButton {
+  padding: 10px 20px;
+  background-color: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 auto;
+  display: block;
+  &:hover {
+    background-color: #7a3ff0;
+  }
+  &:active {
+    background-color: #6a2fe0;
+  }
+}
+.row-container {
+  // border: 1px solid red;
+  padding: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  h3 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+}
+.row-container + .row-container {
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+}
+.button-container {
+  height: 30px;
+  width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+.apply-to-all-button {
+  background-color: #8c52ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 16px;
+  &:hover {
+    background-color: #7a3ff0;
+  }
+  &:active {
+    background-color: #6a2fe0;
+  }
+}

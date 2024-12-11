@@ -1,0 +1,95 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  h2 {
+    margin: 0 0 20px;
+    color: #333;
+    font-size: 24px;
+  }
+}
+
+.rating-section,
+.comment-section {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+.comment-section {
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: vertical;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: #8c52ff;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .cancel {
+    background-color: #f0f0f0;
+    color: #666;
+
+    &:hover:not(:disabled) {
+      background-color: #e0e0e0;
+    }
+  }
+
+  .submit {
+    background-color: #8c52ff;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background-color: #7440e0;
+    }
+  }
+}
